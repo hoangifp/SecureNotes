@@ -1,0 +1,30 @@
+PODS:
+  - CryptoSwift (1.5.1)
+  - IOSSecuritySuite (1.9.5)
+  - ProgressHUD (13.6)
+  - SQLite.swift (0.13.3):
+    - SQLite.swift/standard (= 0.13.3)
+  - SQLite.swift/standard (0.13.3)
+
+DEPENDENCIES:
+  - CryptoSwift (~> 1.0)
+  - IOSSecuritySuite
+  - ProgressHUD (~> 13.6)
+  - SQLite.swift (~> 0.13.3)
+
+SPEC REPOS:
+  trunk:
+    - CryptoSwift
+    - IOSSecuritySuite
+    - ProgressHUD
+    - SQLite.swift
+
+SPEC CHECKSUMS:
+  CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
+  IOSSecuritySuite: 1c04c80a45c9f8899909c70854c05e992acc34aa
+  ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
+  SQLite.swift: 903bfa3bc9ab06345fdfbb578e34f47cfcf417da
+
+PODFILE CHECKSUM: 8b8ec42ad6776e199eec9aa014fd1a81fe0b95bd
+
+COCOAPODS: 1.11.3
