@@ -22,9 +22,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+#if !DEBUG
         if IOSSecuritySuite.amIJailbroken() {
             showAlert("This device appears to be jailbroken. Please keep in mind that jailbreaking weakens the security of the application.")
         }
+#endif
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {

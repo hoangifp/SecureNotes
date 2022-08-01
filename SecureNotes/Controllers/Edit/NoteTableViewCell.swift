@@ -21,7 +21,7 @@ class NoteTableViewCell: UITableViewCell {
     }
 
     private func layout() {
-        let margin = 12.0
+        let margin: CGFloat = 12.0
         let views = [titleLabel, lastModifiedLabel]
         titleLabel.font = UIFont.defaultTitleFont()
         lastModifiedLabel.font = UIFont.defaultSubTitleFont()

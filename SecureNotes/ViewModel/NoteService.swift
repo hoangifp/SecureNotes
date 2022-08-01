@@ -328,9 +328,8 @@ final class NoteService {
         IOSSecuritySuite.denyDebugger()
 #endif
         do {
-            let cypherTitle = try encrypt(rawData: note.title.data(using: .utf8)!)
-            let cypherContent = try encrypt(rawData: note.content.data(using: .utf8)!)
-            guard let cypherTitle = cypherTitle, let cypherContent = cypherContent else {
+            guard let cypherTitle = try encrypt(rawData: note.title.data(using: .utf8)!),
+                  let cypherContent = try encrypt(rawData: note.content.data(using: .utf8)!)else {
                 throw NoteServiceError.cryptoError("")
             }
             let noteId = try database.insertNote(encryptedTitle: Data(bytes: cypherTitle.bytes, count: cypherTitle.count),
@@ -352,9 +351,9 @@ final class NoteService {
         IOSSecuritySuite.denyDebugger()
 #endif
         do {
-            let cypherTitle = try encrypt(rawData: note.title.data(using: .utf8)!)
-            let cypherContent = try encrypt(rawData: note.content.data(using: .utf8)!)
-            guard let cypherTitle = cypherTitle, let cypherContent = cypherContent, let noteId = note.id else {
+            guard let cypherTitle = try encrypt(rawData: note.title.data(using: .utf8)!),
+                  let cypherContent = try encrypt(rawData: note.content.data(using: .utf8)!),
+                  let noteId = note.id else {
                 throw NoteServiceError.cryptoError("")
             }
             try database.updateNote(noteId: noteId,

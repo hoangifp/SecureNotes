@@ -31,9 +31,11 @@ class RegisterAccountViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+#if !DEBUG
         if IOSSecuritySuite.amIJailbroken() {
             showAlert("This device appears to be jailbroken. Please keep in mind that jailbreaking weakens the security of the application.")
         }
+#endif
     }
 
     @IBAction func registerButtonTapped(_ sender: Any) {

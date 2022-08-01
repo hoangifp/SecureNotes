@@ -56,8 +56,8 @@ extension EditNoteViewController {
     func layout() {
         view.backgroundColor = .white
 
-        let margin = 16.0
-        let maxBodyHeight = 500.0
+        let margin: CGFloat = 16.0
+        let maxBodyHeight: CGFloat = 500.0
         // set up scroll view and content view
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.contentInset = UIEdgeInsets(top: 2*margin, left: 0, bottom: 0, right: 0)
