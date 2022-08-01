@@ -28,6 +28,13 @@ class RegisterAccountViewController: UIViewController {
         pinTextField.text = ""
         confirmPinTextField.text = ""
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if IOSSecuritySuite.amIJailbroken() {
+            showAlert("This device appears to be jailbroken. Please keep in mind that jailbreaking weakens the security of the application.")
+        }
+    }
 
     @IBAction func registerButtonTapped(_ sender: Any) {
         if validateTextFields() {

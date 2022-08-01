@@ -60,7 +60,7 @@ extension EditNoteViewController {
         let maxBodyHeight = 500.0
         // set up scroll view and content view
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.contentInset = UIEdgeInsets(top: margin, left: 0, bottom: 0, right: 0)
+        scrollView.contentInset = UIEdgeInsets(top: 2*margin, left: 0, bottom: 0, right: 0)
         view.addSubview(scrollView)
         
         let contentView = UIView()

@@ -34,15 +34,15 @@ pod install
 
 ### Register, Key forming
 ```
-salt = random(32 bytes) // To be encrypted by ecies and storedin db
+salt = random(32 bytes) // To be encrypted by ecies and stored in db
 data = Data(salt+username+pin)
-iv = random(32 bytes) // To be encrypted by ecies and storedin db
+iv = random(32 bytes) // To be encrypted by ecies and stored in db
 key = data.sha256()
 aes = AES-GCM(key, iv)
 
-hash = data.sha512() // To be encrypted by ecies and storedin db
+hash = data.sha512() // To be encrypted by ecies and stored in db
 ```
-> For demonstration purposes, sha256 is used. However, PBKDF2 is better at protecting against brute force.
+> For demonstration purposes, sha256 is used to derive the key. However, PBKDF2 should be used to protect against brute force.
 
 After successful login/registering, the **AES-GCM key**  will be formed and stay **encrypted** in the memory during the active session by Secure Enclave **eciesEncryptionCofactorVariableIVX963SHA256AESGCM** (EC*). It acts as a caching algorithm to be re-used multiple times without additional login from the user. If the application is transitioned to background or is terminated, the encrypted **EC(AES-GCM key, IV)** will be wiped out from memory.
 
@@ -126,6 +126,7 @@ The application has been enforced by some security protections in the RELEASE bu
 * Show warning to jailbreak devices
 * Anti-debug for some important functions
 * Anti-hook for some important functions
+
 Below methods can be implemented for the application's further protection:
 * Hide hardcoded strings, add more control flows and rename sensitive functions/variables to hide attack points during static analysis.
 * Add a secure keypad to protect the pin against the keyboard logger.
