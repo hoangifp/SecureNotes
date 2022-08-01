@@ -6,6 +6,11 @@ SecureNotes lets the user store text notes securely. All notes are encrypted wit
 
 The key to decrypt notes is formed by the user's password; therefore, only the user can decrypt the saved notes.
 
+### Demo
+Click on image below for the product video demo.
+
+[![SecureNotes Demo](http://img.youtube.com/vi/v5ToKgt-rOU/0.jpg)](http://www.youtube.com/watch?v=v5ToKgt-rOU)
+
 ### Supported platforms & Set up
 
 * iOS 13 and later.
